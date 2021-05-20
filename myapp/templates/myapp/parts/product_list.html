@@ -1,0 +1,28 @@
+<section class="section">
+<div class="container">
+<div class="columns mt-5 is-8 is-variable is-centered">
+    {% for p in products %}
+    <div class="column is-4-tablet is-3-desktop">
+            <div class="card">
+                <div class="card-image">
+                    <div class="card-image has-text-centered px-5">
+                        <img src="{{p.image.url}}" alt="{{p.name}}">
+                    </div>
+                </div>
+                
+                <div class="card-content">
+                    <p>${{p.price}}</p>
+                   <p class="title is-size-5">{{p.name}}</p>
+                </div>
+
+                <footer class="card-footer is-primary">
+                    <p class="card-footer-item">
+                        <a href="{{p.get_absolute_url}}" class="has-text-grey">View</a>
+                    </p>
+                </footer>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+</div>
+</section>

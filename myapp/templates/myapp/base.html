@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    
+    <!--<link rel="stylesheet" href="{% static 'myapp/css/bulma/css/bulma.min.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/bulma/css/bulma.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/bulma/css/bulma-rtl.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/bulma/bulma.sass' %}">-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <style>
+
+      body{
+        background-color: white;
+      }
+      .navbar{
+        background-color: #fcf6f6;
+        position: sticky;
+      }
+
+      .navbar-menu a{
+        color: tomato;
+      }
+
+      .navbar-burger{
+        color: rgba(255, 255, 255, 0.281);
+      }
+
+      .footer{
+        background-color: rgba(245, 190, 8, 0.096);
+      }
+
+      * {box-sizing: border-box;}
+
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 300px;
+  height: 300px;
+}
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar has-shadow">
+      <!--Logo-->
+      <div class="navbar-brand">
+        <a href="/" class="navbar-item">
+
+          <img src="/media/uploads/project-management.png" style="max-height: 70px" class="py-2 px-2">
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" id="burger">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu " id="nav-links">
+        <div class="navbar-end">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              My Account
+            </a>
+    
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                About
+              </a>
+              <a class="navbar-item">
+                Jobs
+              </a>
+              <a class="navbar-item">
+                Contact
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                Report an issue
+              </a>
+            </div>
+          </div>
+          <a  class="navbar-item">Shopping Cart (0)</a>
+        </div>
+      </div>
+    </nav>
+  <section class="section">
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>@copyright 2021 Gtech</p>
+    </div>
+  </footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="{% static 'myapp/js/script.js' %}"></script>
+  
+  
+  </body>
+</html>
